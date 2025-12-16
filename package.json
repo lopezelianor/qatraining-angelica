@@ -1,0 +1,27 @@
+{
+  "name": "qatraining-angelica",
+  "version": "1.0.0",
+  "description": "proyecttraining",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lopezelianor/qatraining-angelica.git"
+  },
+  "keywords": [
+    "e2e",
+    "automation",
+    "cypress"
+  ],
+  "author": "Ange",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lopezelianor/qatraining-angelica/issues"
+  },
+  "homepage": "https://github.com/lopezelianor/qatraining-angelica#readme",
+  "devDependencies": {
+    "cypress": "^14.5.4"
+  }
+}
