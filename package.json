@@ -4,7 +4,8 @@
   "description": "proyecttraining",
   "main": "index.js",
   "scripts": {
-    "test": "test"
+    "test": "test",
+    "cypress:open": "cypress open"
   },
   "repository": {
     "type": "git",
