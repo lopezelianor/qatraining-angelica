@@ -19,10 +19,10 @@ describe('template spec',{testIsolation: false}, () => {
 
         before('loading page', () => {
             cy.visit('/login')
-            userLogin(loginData.email, loginData.password)
         })       
 
         it('group1 - Validate purcharse on Category Men', () => {
+            userLogin(loginData.email, loginData.password)
             goesToMenSection()
             goesToTShirtMen()
             cy.get(titleSectionProducts).should('include.text', 'Men - Tshirts Products')
@@ -37,6 +37,7 @@ describe('template spec',{testIsolation: false}, () => {
         })
 
         it('group2 - Validate purcharse on Brands', () => {
+            userLogin(loginData.email, loginData.password)
             goesToPoloShirt()
             cy.get(titleSectionProducts).should('include.text', 'Brand - Polo Products')
             addProducts('Blue Top')
