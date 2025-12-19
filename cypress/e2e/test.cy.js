@@ -1,6 +1,7 @@
 const { loginData } = require("../fixtures/loginData")
 const { goesToMenSection, addProduct,addProducts,goesToTShirtMen,goesToPoloShirt} = require("../support/actions/categoryAction")
 const { userLogin } = require("../support/actions/loginAction")
+const { userLogout } = require("../support/actions/logoutAction")
 const { titleSectionProducts } = require("../support/pages/categoryPage")
 const { getMessageAddedProduct,goesToViewCart, continueShopping} = require("../support/actions/modalConfirmAction")
 const {cardCreditData} = require("../fixtures/cardInformation")
@@ -17,12 +18,12 @@ describe('template spec',{testIsolation: false}, () => {
             }
         })
 
-        before('loading page', () => {
+        beforeEach('loading page', () => {
             cy.visit('/login')
+            userLogin(loginData.email, loginData.password)
         })       
 
         it('group1 - Validate purcharse on Category Men', () => {
-            userLogin(loginData.email, loginData.password)
             goesToMenSection()
             goesToTShirtMen()
             cy.get(titleSectionProducts).should('include.text', 'Men - Tshirts Products')
@@ -37,7 +38,6 @@ describe('template spec',{testIsolation: false}, () => {
         })
 
         it('group2 - Validate purcharse on Brands', () => {
-            userLogin(loginData.email, loginData.password)
             goesToPoloShirt()
             cy.get(titleSectionProducts).should('include.text', 'Brand - Polo Products')
             addProducts('Blue Top')
@@ -50,5 +50,9 @@ describe('template spec',{testIsolation: false}, () => {
             goesToPlaceOrder()
             filledPaymentForm(cardCreditData.nameCard, cardCreditData.numberCard, cardCreditData.monthCard, cardCreditData.yearCard, cardCreditData.cvvCard)
             cy.get(orderPlacedMessage).should('contain.text', 'Order Placed!')
+        })
+
+        afterEach('Logout',() => {
+            userLogout()
         })
     })    
