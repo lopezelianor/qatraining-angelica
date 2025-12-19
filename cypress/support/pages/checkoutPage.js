@@ -1,0 +1,10 @@
+export const itemDescription = '.cart_description p'
+export const itemPrice = '.cart_price p'
+export const titleSectionProducts = '.cart_total p'
+export const checkoutButton = '.check_out'
+export const placeOrderButton = '[href=\'/payment\']'
+
+export const firstNameAddress = '.address_lastname'
+export const postCodeAddressData = '.address_postcode'
+export const countryNameAddress = '.address_country_name'
+export const addressPhone = '.address_phone'

@@ -1,0 +1,6 @@
+export const nameCard = '[name=\'name_on_card\']'
+export const numberCard = '[name=\'card_number\']'
+export const monthCard = '[name=\'expiry_month\']'
+export const yearCard = '[name=\'expiry_year\']'
+export const cvvCard = '[name=\'cvc\']'
+export const payButton = '[data-qa=\'pay-button\']'
